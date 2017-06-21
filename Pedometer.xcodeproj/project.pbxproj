@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		04FE8FCA1EFA092E00EFDC05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FE8FC91EFA092E00EFDC05 /* main.m */; };
 		04FE8FCD1EFA092E00EFDC05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FE8FCC1EFA092E00EFDC05 /* AppDelegate.m */; };
-		04FE8FD01EFA092E00EFDC05 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FE8FCF1EFA092E00EFDC05 /* ViewController.m */; };
+		04FE8FD01EFA092E00EFDC05 /* PedometerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FE8FCF1EFA092E00EFDC05 /* PedometerController.m */; };
 		04FE8FD31EFA092E00EFDC05 /* Pedometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FE8FD11EFA092E00EFDC05 /* Pedometer.storyboard */; };
 		04FE8FD51EFA092E00EFDC05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04FE8FD41EFA092E00EFDC05 /* Assets.xcassets */; };
 		04FE8FD81EFA092E00EFDC05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FE8FD61EFA092E00EFDC05 /* LaunchScreen.storyboard */; };
@@ -43,8 +43,8 @@
 		04FE8FC91EFA092E00EFDC05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04FE8FCB1EFA092E00EFDC05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04FE8FCC1EFA092E00EFDC05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		04FE8FCE1EFA092E00EFDC05 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		04FE8FCF1EFA092E00EFDC05 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		04FE8FCE1EFA092E00EFDC05 /* PedometerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PedometerController.h; sourceTree = "<group>"; };
+		04FE8FCF1EFA092E00EFDC05 /* PedometerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PedometerController.m; sourceTree = "<group>"; };
 		04FE8FD21EFA092E00EFDC05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pedometer.storyboard; sourceTree = "<group>"; };
 		04FE8FD41EFA092E00EFDC05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04FE8FD71EFA092E00EFDC05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -119,8 +119,8 @@
 				04FE8FFB1EFA0D3300EFDC05 /* Pedometer.entitlements */,
 				04FE8FCB1EFA092E00EFDC05 /* AppDelegate.h */,
 				04FE8FCC1EFA092E00EFDC05 /* AppDelegate.m */,
-				04FE8FCE1EFA092E00EFDC05 /* ViewController.h */,
-				04FE8FCF1EFA092E00EFDC05 /* ViewController.m */,
+				04FE8FCE1EFA092E00EFDC05 /* PedometerController.h */,
+				04FE8FCF1EFA092E00EFDC05 /* PedometerController.m */,
 				04FE8FD11EFA092E00EFDC05 /* Pedometer.storyboard */,
 				04FE902E1EFA42EB00EFDC05 /* avatar@2x.jpg */,
 				04FE8FD41EFA092E00EFDC05 /* Assets.xcassets */,
@@ -323,7 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04FE8FD01EFA092E00EFDC05 /* ViewController.m in Sources */,
+				04FE8FD01EFA092E00EFDC05 /* PedometerController.m in Sources */,
 				04FE90341EFA4E9700EFDC05 /* arcView.m in Sources */,
 				04FE90371EFA4EB600EFDC05 /* PedometerCell.m in Sources */,
 				04FE8FCD1EFA092E00EFDC05 /* AppDelegate.m in Sources */,

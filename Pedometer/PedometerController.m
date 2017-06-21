@@ -6,19 +6,19 @@
 //  Copyright © 2017年 mac. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "PedometerController.h"
 #import <HealthKit/HealthKit.h>
 #import "arcView.h"
 #import "PedometerCell.h"
-@interface ViewController ()<UIScrollViewDelegate>
+@interface PedometerController()<UIScrollViewDelegate>
 @property (nonatomic, strong) HKHealthStore *healthStore;
 @property (weak, nonatomic) IBOutlet UIView *headView;
 @property (strong, nonatomic) IBOutlet UIScrollView *indicators;
 @property (weak, nonatomic) IBOutlet UITableView *RankingTable;
-@property (nonatomic, strong) NSMutableArray *dataArr;
+@property (nonatomic, strong) NSArray *dataArr;
 @end
 
-@implementation ViewController{
+@implementation PedometerController{
     arcView *view1;
     UIButton *btn2;
     // 计步器走的步数；
@@ -28,13 +28,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self ininData];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self creatUI];
     [self getAuthority];
-    _dataArr = [[NSMutableArray alloc] init];
+}
+//数据处理排序
+-(void)ininData{
+    NSDictionary *stu1 = [[NSDictionary alloc] initWithObjectsAndKeys:@"zhangsan",@"userName",@"1000",@"stepCount",@"30",@"count", nil];
+    NSDictionary *stu2 = [[NSDictionary alloc] initWithObjectsAndKeys:@"张三",@"userName",@"2000",@"stepCount",@"10",@"count", nil];
+    NSDictionary *stu3 = [[NSDictionary alloc] initWithObjectsAndKeys:@"王五",@"userName",@"1000",@"stepCount",@"10",@"count", nil];
+    NSDictionary *stu4 = [[NSDictionary alloc] initWithObjectsAndKeys:@"王五",@"userName",@"3000",@"stepCount",@"20",@"count", nil];
+    NSArray *array = [NSArray arrayWithObjects:stu1,stu2,stu3, stu4, nil];
+    
+    // 1.先按步数进行排序
+    NSSortDescriptor *stepCount = [NSSortDescriptor sortDescriptorWithKey:@"stepCount" ascending:NO];
+    // 2.再按点赞数进行排序
+    NSSortDescriptor *count = [NSSortDescriptor sortDescriptorWithKey:@"count" ascending:NO];
+    // 3.再按名字进行排序
+    NSSortDescriptor *userName = [NSSortDescriptor sortDescriptorWithKey:@"userName" ascending:NO];
+    // 按顺序添加排序描述器
+    NSArray *descs = [NSArray arrayWithObjects:stepCount, count, userName, nil];
+    _dataArr = [array sortedArrayUsingDescriptors:descs];
 }
 //创建UI
 -(void)creatUI{
@@ -129,7 +147,7 @@
 }
 -(NSInteger )tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return self.dataArr.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -141,6 +159,11 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"pedometerCell" forIndexPath:indexPath];
     }
     tableView.tableFooterView = [[UIView alloc] init];
+    cell.headPortrait.image = [UIImage imageNamed:@"avatar@2x.jpg"];
+    cell.count.text = _dataArr[indexPath.row][@"count"];
+    cell.stepCount.text = _dataArr[indexPath.row][@"stepCount"];
+    cell.userName.text = _dataArr[indexPath.row][@"userName"];
+    cell.ranking.text = [NSString stringWithFormat:@"%ld",indexPath.row+1];
     return cell;
 }
 #pragma mark ~~~~~~~~~~~~~~tableView end

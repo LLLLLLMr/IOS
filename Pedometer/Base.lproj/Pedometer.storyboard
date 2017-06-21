@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Pedometer Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PedometerController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tTR-vz-tnE"/>
                         <viewControllerLayoutGuide type="bottom" id="ZZd-Mr-FTd"/>
@@ -99,6 +99,14 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="count" destination="2pp-5B-Rap" id="lQ5-R5-4EO"/>
+                                            <outlet property="headPortrait" destination="TuT-1o-4K5" id="wvk-rr-rQH"/>
+                                            <outlet property="ranking" destination="TkB-0U-nNT" id="4dX-to-Esg"/>
+                                            <outlet property="stepCount" destination="a3e-Q5-xyO" id="Z72-nw-Lvn"/>
+                                            <outlet property="thumbUpBtn" destination="7vq-5M-iTM" id="19d-OF-DHg"/>
+                                            <outlet property="userName" destination="fuD-rK-F6p" id="MUJ-Ea-jln"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
