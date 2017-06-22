@@ -38,7 +38,7 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(numberChange:) name:@"number" object:nil];
     
     CGFloat end = 1.5*M_PI +(2*M_PI*_num/10000);
-    CGContextAddArc(ctx, APPW/2, APPW/2, 60, 1.5*M_PI , end, 0);
+    CGContextAddArc(ctx, APPW/2, 320/2, 60, 1.5*M_PI , end, 0);
     
     //3.绘制
     CGContextStrokePath(ctx);
@@ -57,7 +57,7 @@
     CGContextSetLineDash(ctx, 0, length, 2);
     //1.4 设置颜色
    [[[UIColor alloc]initWithRed:225.0/255.0 green:225.0/255.0 blue:225.0/255.0 alpha:1] set];
-       CGContextAddArc(ctx, APPW/2, APPW/2, 60, 1.5*M_PI , 3.5*M_PI, 0);
+       CGContextAddArc(ctx, APPW/2, 320/2, 60, 1.5*M_PI , 3.5*M_PI, 0);
     //3.绘制
     CGContextStrokePath(ctx);
 }
@@ -78,11 +78,11 @@
 {
     self =[super initWithFrame:frame];
     if (self) {
-        UILabel *la1 = [[UILabel alloc]initWithFrame:CGRectMake((APPW-120)/2, (APPW-80)/2, 120, 30)];
+        UILabel *la1 = [[UILabel alloc]initWithFrame:CGRectMake((APPW-120)/2, (320-80)/2, 120, 30)];
         la1.text = @"步数";
         la1.textAlignment = NSTextAlignmentCenter;
         
-        _numLabel=[[UILabel alloc]initWithFrame:CGRectMake((APPW-120)/2, (APPW-80)/2+30, 120, 30)];
+        _numLabel=[[UILabel alloc]initWithFrame:CGRectMake((APPW-120)/2, (320-80)/2+30, 120, 30)];
                _numLabel.textAlignment =NSTextAlignmentCenter;
         _numLabel.textColor=[UIColor blackColor];
         _numLabel.text = @"0步";
@@ -90,7 +90,7 @@
         if (!_timer) {
             _timer=[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(change) userInfo:nil repeats:YES];
         }
-        UILabel *la3 = [[UILabel alloc]initWithFrame:CGRectMake((APPW-80)/2, (APPW-80)/2+60, 80, 30)];
+        UILabel *la3 = [[UILabel alloc]initWithFrame:CGRectMake((320-80)/2, (320-80)/2+60, 80, 30)];
         la3.text = @"";
         la3.textAlignment = NSTextAlignmentCenter;
         la3.font=[UIFont systemFontOfSize:12];
@@ -133,7 +133,7 @@ void drawHu1()
     [[[UIColor alloc]initWithRed:0.0/255.0 green:201.0/255.0 blue:87.0/255.0 alpha:1] set];
     
     // 2 设置路径
-    CGContextAddArc(ctx,APPW/2,APPW/2,80,-M_PI,M_PI,0);
+    CGContextAddArc(ctx,APPW/2,320/2,80,-M_PI,M_PI,0);
     
     // 3 绘制
     CGContextStrokePath(ctx);

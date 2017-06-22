@@ -57,7 +57,7 @@
 //创建UI
 -(void)creatUI{
     _indicators.contentSize=CGSizeMake([UIScreen mainScreen].bounds.size.width,700);
-    view1  =[[arcView alloc]initWithFrame:CGRectMake(0,0,APPW,APPW-30)];
+    view1  =[[arcView alloc]initWithFrame:CGRectMake(0,0,APPW,320-30)];
     view1.backgroundColor = [UIColor whiteColor];
     view1.num = v;
     [_headView addSubview:view1];
@@ -159,6 +159,8 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"pedometerCell" forIndexPath:indexPath];
     }
     tableView.tableFooterView = [[UIView alloc] init];
+    //设置cell选中风格
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.headPortrait.image = [UIImage imageNamed:@"avatar@2x.jpg"];
     cell.count.text = _dataArr[indexPath.row][@"count"];
     cell.stepCount.text = _dataArr[indexPath.row][@"stepCount"];
